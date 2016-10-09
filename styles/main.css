@@ -1,0 +1,58 @@
+body {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    text-align: center;
+	letter-spacing: 1px;
+	color: #3d4970;
+  background-color: blue;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: #e74c3c;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 1000;
+  display: none;
+}
+
+
+ul li {
+	display: inline;
+}
+
+nav ul li:first-child {
+	float: left;
+}
+
+nav ul li:last-child {
+	float: right;
+}
+
+nav a {
+	color: #fff;
+}
+
+img {
+	margin: -2px 0 0 0;
+}
+
+#grid_container {
+  width: 500px;
+  height: 100px;
+  margin-top: auto;
+  clear: both;
+  display: inline-grid;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+}
+
+#score_container {
+  border:  5px solid gray;
+}
