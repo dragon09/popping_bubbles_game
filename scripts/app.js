@@ -4,10 +4,8 @@ $(document).ready(function () {
 
 var startNewGame = $(".new")
 var howToPlay = $(".howTo")
-// var playerInput = $("#userGuess");
-// var guessCount = 0;
-var count = $("#count");
 var pointsAdded = 0;
+var counter = $("counter");
 
 
 
@@ -25,10 +23,11 @@ $(".new").click(function () {
 console.log('new yo')
 });
 
-var timerElement = $('timer');
-var count = 31;
-var counter = setInterval(timer, 1000);
 
+//countdown timer working
+var timerElement = $('timer');
+var count = 21;
+var counter = setInterval(timer, 1000);
 
 function timer(){
  	count = count-1;
@@ -42,6 +41,12 @@ function timer(){
 timer();
 
 
+//scoreboard
+function increaseScore() {
+  console.log('scoreboard working')
+  pointsAdded++;
+  counter.text(pointsAdded)
+}
 
 
 //Let's Play link back to main screen
@@ -52,7 +57,6 @@ $("a.close").click(function(){
 // New Game button clicked
 function newGame() {
     console.log("new game clicked");
-    // guessCount = 0
     // count.text(guessCount)
     // playerInput.val('')
   //  $('.newGuess').remove()
@@ -80,7 +84,8 @@ function newHowTo() {
 $('#0').click(function () {
             console.log('click 0 working')
             $(this).remove();
-    });
+});
+
 
 $('#1').click(function () {
         console.log('click 1 working')
@@ -276,6 +281,7 @@ $('#39').click(function () {
       console.log('click 39 working')
       $(this).remove();
 });
+
 
     // $('#40').click(function () {
     //     console.log('click 40 working')
