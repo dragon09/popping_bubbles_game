@@ -5,7 +5,9 @@ $(document).ready(function () {
 var startNewGame = $(".new")
 var howToPlay = $(".howTo")
 var pointsAdded = 0;
-var counter = $("counter");
+var score = $("#score1");
+var gameScore = 0;
+var level = 0;
 
 
 
@@ -22,6 +24,11 @@ $(".howTo").click(function(){
 $(".new").click(function () {
 console.log('new yo')
 });
+
+
+
+
+
 
 
 //countdown timer working
@@ -41,12 +48,8 @@ function timer(){
 timer();
 
 
-//scoreboard
-function increaseScore() {
-  console.log('scoreboard working')
-  pointsAdded++;
-  counter.text(pointsAdded)
-}
+
+
 
 
 //Let's Play link back to main screen
@@ -76,16 +79,224 @@ function newHowTo() {
  //   document.getElementById('sound').innerHTML="<audio autoplay><source src='audio/pop.wav' type='audio/wav'></audio>";
  // }
 
+ var howMany = 0;
+ $('#0').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#1').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#2').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#3').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#4').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#5').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#6').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#7').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#8').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#9').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#10').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#11').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#12').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#13').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#14').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#15').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#16').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#17').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#18').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#19').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#20').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#21').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#22').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#23').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#24').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#25').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#26').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#27').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#28').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#29').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#30').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#31').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#32').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#33').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#34').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#35').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#36').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#37').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#38').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#39').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
+
+ $('#40').click(function(){
+     howMany += 1;
+     $("#info").text(howMany);
+ });
 
 
 
 
-//grids and bubbles
-$('#0').click(function () {
-            console.log('click 0 working')
-            $(this).remove();
-});
 
+
+
+
+
+ $('#0').click(function () {
+         console.log('click 0 working')
+         $(this).remove();
+     });
 
 $('#1').click(function () {
         console.log('click 1 working')
