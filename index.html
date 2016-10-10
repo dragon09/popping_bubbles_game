@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Lets play</title>
+  <title>Popping Bubbles Game | Victoria Fajardo</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -31,7 +31,7 @@
 <body>
   <nav>
         <ul class="clearfix">
-            <li><a class="hint" href="#">HOW TO ?</a></li>
+            <li><a class="howTo" href="#">HOW TO ?</a></li>
             <li><a class="new" href="#">+ NEW GAME</a></li>
         </ul>
     </nav>
@@ -53,16 +53,22 @@
     </div>
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-
     <div class="lrg_container">
           <div id="block"></div>
+          <h1>Popping Bubbles Game</h1>
           <div id="score_container">
-          <h1>Scoreboard</h1>
+          <h2>Scoreboard</h2>
           <div class="score1" id="player1">Player 1: 0</div>
           <div class="score2" id="player2">Player 2: 0</div>
-          <h2>Timer</h2>
+            <h2>Timer</h2>
         </div>
+
+        <div id="click_sound">
+          <audio autoplay>
+            <source src="sound/PopBanner-SoundBible.com-641783855.wav" type="sound/wav">
+          </audio>
+        </div>
+
         <div class="grid_container">
           <img class="box" id="0" src="img/bubble-04.jpg">
           <img class="box" id="1" src="img/bubble-04.jpg">
@@ -107,9 +113,30 @@
           <img class="box" id="40" src="img/bubble-04.jpg">
         </div>
         </div>
+    <!-- <div class="clicked_image_container">
+      <img src="img/splat.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/bam.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/boom.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/crunch.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/kaboom.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/klang.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/krack.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/ow.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/phoomph.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/ping.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/pow.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/skreech.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/thwack.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/wham.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+      <img src="img/zoom.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
+    </div> -->
+        <p class="notice"></p>
+        <p class="alert"></p>
 
 
-
+        <audio id="game-music" src="sound/PopBanner-SoundBible.com-641783855.wav"/>
+      <audio autoplay="autoplay" controls="controls" src="sound/Loading_Loop.wav" hidden="hidden" type="audio/wav" controls>
+        </audio>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
 <script src="scripts/app.js"></script>
 
