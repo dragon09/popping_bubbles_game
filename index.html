@@ -60,9 +60,13 @@
           <h2>Scoreboard</h2>
           <div class="score1" id="player1">Player 1: 0</div>
           <div class="score2" id="player2">Player 2: 0</div>
-            <h2>Timer</h2>
+            <h2>Countdown Timer</h2>
+            <!-- <button type="timer_button" name="button">Start</button> -->
+            <div id='timer'> 0:00 &nbsp;</div>
+        </div>
         </div>
 
+<!-- //intro game music -->
         <div id="click_sound">
           <audio autoplay>
             <source src="sound/PopBanner-SoundBible.com-641783855.wav" type="sound/wav">
@@ -110,9 +114,9 @@
           <img class="box" id="37" src="img/bubble-04.jpg">
           <img class="box" id="38" src="img/bubble-04.jpg">
           <img class="box" id="39" src="img/bubble-04.jpg">
-          <img class="box" id="40" src="img/bubble-04.jpg">
+          <!--<img class="box" id="40" src="img/bubble-04.jpg">-->
         </div>
-        </div>
+
     <!-- <div class="clicked_image_container">
       <img src="img/splat.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
       <img src="img/bam.png" style="top: 80.5px; left:70px; position:absolute;"alt="" />
@@ -133,14 +137,17 @@
         <p class="notice"></p>
         <p class="alert"></p>
 
+        <footer class='row'>
+            <p class= 'twelve columns'>&copy; Victoria WDI 2016</p>
+          </footer>
 
         <audio id="game-music" src="sound/PopBanner-SoundBible.com-641783855.wav"/>
       <audio autoplay="autoplay" controls="controls" src="sound/Loading_Loop.wav" hidden="hidden" type="audio/wav" controls>
         </audio>
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
 <script src="scripts/app.js"></script>
-
-<!-- End Document -->
 
 </body>
 </html>

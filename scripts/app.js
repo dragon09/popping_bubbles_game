@@ -4,48 +4,74 @@ $(document).ready(function () {
 
 var startNewGame = $(".new")
 var howToPlay = $(".howTo")
-var playerInput = $("#userGuess");
-var guessCount = 0;
+// var playerInput = $("#userGuess");
+// var guessCount = 0;
 var count = $("#count");
-var body = document.body;
 var pointsAdded = 0;
+
+
 
 
     startNewGame.click(newGame)
     howToPlay.click(newHowTo)
 
+
 $(".howTo").click(function(){
     $(".overlay").fadeIn(1000);
-
 });
 
-
+//new game
 $(".new").click(function () {
 console.log('new yo')
 });
 
+var timerElement = $('timer');
+var count = 31;
+var counter = setInterval(timer, 1000);
+
+
+function timer(){
+ 	count = count-1;
+ 	if (count <= 0)
+ 	{
+    clearInterval(counter);
+    return;
+ 	}
+ 	$("#timer").text(count);
+};
+timer();
+
+
+
+
+//Let's Play link back to main screen
 $("a.close").click(function(){
     $(".overlay").fadeOut(1000);
 });
 
-
+// New Game button clicked
 function newGame() {
     console.log("new game clicked");
     // guessCount = 0
     // count.text(guessCount)
     // playerInput.val('')
-   $('.newGuess').remove()
+  //  $('.newGuess').remove()
 }
 
+
+
+
+// How to play button clicked
 function newHowTo() {
     console.log('how to is working');
 }
 
-//click to pop audio
- function audioPop() {
-   $('#sound').html("<embed src='audio/pop.wav' hidden=true autostart=true loop=false>");
-   document.getElementById('sound').innerHTML="<audio autoplay><source src='audio/pop.wav' type='audio/wav'></audio>";
- }
+//click to pop audio-NOT WORKING
+ // function audioPop() {
+ //   $('#sound').html("<embed src='audio/pop.wav' hidden=true autostart=true loop=false>");
+ //   document.getElementById('sound').innerHTML="<audio autoplay><source src='audio/pop.wav' type='audio/wav'></audio>";
+ // }
+
 
 
 
@@ -247,10 +273,11 @@ $('#38').click(function () {
 });
 
 $('#39').click(function () {
-                                                    console.log('click 39 working')
-                                                    $(this).remove();
+      console.log('click 39 working')
+      $(this).remove();
 });
 
-$('#40').click(function () {
-                                                console.log('click 40 working')
-});
+    // $('#40').click(function () {
+    //     console.log('click 40 working')
+    //     $(this).remove();
+    // });
