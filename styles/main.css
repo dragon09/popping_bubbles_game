@@ -1,25 +1,82 @@
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-o-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+img {
+    -webkit-animation: blink 1s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation: blink 1s;
+    -moz-animation-iteration-count: infinite;
+    -o-animation: blink 1s;
+    -o-animation-iteration-count: infinite;
+}
+
 body {
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
     text-align: center;
 	letter-spacing: 1px;
 	color: #3d4970;
   background-color: #0099FF;
+  /*background-image: url('img/background_image.jpg') no-repeat center center fixed;*/
+
 }
 
-.container {
 
+
+#logo{
+  border: #fff solid 3px;
 }
 
 .player1box {
   width: 150px;
   height: 150px;
   border: 2px solid gray;
+  margin-left: 850px;
 }
 
 .player2box {
   width: 150px;
   height: 150px;
   border: 2px solid gray;
+
 }
 
 .timer_box {
@@ -79,7 +136,11 @@ img {
   border:  5px solid gray;
 }
 
-/*#timer {
+.player1box {
+  float:
+}
+
+/*#timer_box {
   height: 400px;
   width: 200px;
 }*/
