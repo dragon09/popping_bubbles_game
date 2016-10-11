@@ -54,8 +54,8 @@ body {
     text-align: center;
 	letter-spacing: 1px;
 	color: #3d4970;
-  background-color: #0099FF;
-  /*background-image: url('img/background_image.jpg') no-repeat center center fixed;*/
+  /*background-color: #0099FF;*/
+  background: url('../img/background_image.jpg') no-repeat center center fixed;
 
 }
 
