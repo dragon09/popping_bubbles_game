@@ -1,33 +1,44 @@
 $(document).ready(function () {
   console.log('ready')
 
+
+
+//pop sound working on click image
+  $("#0").click(function() {
+    playSound('sound/PopBanner-SoundBible.com-641783855.wav');
+  })
+
   function playSound(soundFile) {
-    debugger;
     var audio = new Audio(soundFile);
     audio.play();
   }
-  $("#dummy").click(function(sF) {
-    playSound(sF);
-  })
+
   var startNewGame = $(".new")
   var howToPlay = $(".howTo")
-  // var pointsAdded = 0;
-  // var score = $("#score1");
-  // var gameScore = 0;
-  // var level = 0;
+
 
     startNewGame.click(newGame)
     howToPlay.click(newHowTo)
 
-
+//How To Play link for game instructions
 $(".howTo").click(function(){
     $(".overlay").fadeIn(1000);
 });
 
-//new game
+//starts a new game
 $(".new").click(function () {
 console.log('new yo')
 });
+
+//3-2-1 begin counter
+// var startCounter = 5;
+// var interval = setInterval(function () {
+//   startCounter--;
+//
+//   if (startCounter == 0) {
+//       clearInterval(interval);{
+//       }
+//   }
 
 
   //countdown timer working
@@ -52,30 +63,229 @@ console.log('new yo')
       $(".overlay").fadeOut(1000);
   });
 
-  // New Game button clicked
-  function newGame() {
-      console.log("new game clicked");
-      // count.text(guessCount)
-      // playerInput.val('')
-    //  $('.newGuess').remove()
-  }
-
-
   // How to play button clicked
   function newHowTo() {
       console.log('how to is working');
   }
 
-  $("body").click(function(){
 
-    $('body').append('<embed id="player" src="sound/PopBanner-SoundBible.com-641783855.wav" autostart="true" hidden="true" loop="false"></embed>');
-  });
+  // New Game button clicked
+  function newGame() {
+      console.log("new game clicked");
+  }
+
+$('grid_container').fireworks();
+
+
+//player 2 scoreboard
+  // var howMany = 0;
+  // $('#0').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#1').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#2').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#3').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#4').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#5').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#6').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#7').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#8').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#9').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#10').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#11').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#12').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#13').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#14').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#15').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#16').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#17').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#18').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#19').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#20').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#21').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#22').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#23').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#24').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#25').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#26').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#27').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#28').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#29').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#30').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#31').click(function(){
+  //     howMany += 1;
+  //     $("#info").text(howMany);
+  // });
+  //
+  // $('#32').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#33').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#34').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#35').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#36').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#37').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#38').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
+  //
+  // $('#39').click(function(){
+  //     howMany += 1;
+  //     $("#info2").text(howMany);
+  // });
 
 
 
-  $("#0").click(function(){
-    $('body').append('<embed src="sound/PopBanner-SoundBible.com-641783855.wav" autostart="true" hidden="true" loop="false"></embed>');
-  });
+
+
+
+
+
 
   //player 1 scoreboard
    var howMany = 0;
@@ -294,7 +504,7 @@ console.log('new yo')
 
    $('#0').click(function () {
            console.log('click 0 working')
-           // $(this).remove();
+           $(this).remove();
        });
 
   $('#1').click(function () {
