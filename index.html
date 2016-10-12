@@ -25,7 +25,7 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="img/png" href="img/favicon.png">
+  <link rel="icon" type="img/png" href="img/android-icon-72x72.png">
 
 </head>
 <body>
@@ -52,6 +52,21 @@
             </div>
         </div>
     </div>
+<!-- game over image notification -->
+    <div id="gameover" style="display:none">
+      <img src="img/gameOver.png" /><br>
+      You have scored: <span id="scoreCount"></span>
+    </div>
+
+
+    <div id="winner" style="display:none">
+      <img src="img/winner.png" /><br>
+       <img src="img/thwack.png" alt="" />
+       <img src="img/pup.gif" alt="" />
+       <img src="img/zoom.png" alt="" />
+      You have scored: <span id="scoreCount"></span>
+    </div>
+
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -69,7 +84,8 @@
 
     <div class="instructions">
 	   				<h2>Popping Bubbles Game</h2>
-	   				<p><strong>Objective:</strong> Click to pop as many bubbles as you can in 25 seconds to uncover a suprise!</p>
+	   				<p>***Objective:</strong> Click to pop as many bubbles as you can in 25 seconds to uncover a suprise!</p>
+            <p>Timer will begin when Start Game button is clicked***</p>
             <button class="start_button">Start game</button>
 	 		</div>
       <br>
@@ -77,46 +93,46 @@
 
         <div class="grid_container">
           <img class="box" id="0" src="img/bubble.png"/>
-          <img class="box" id="1" src="img/Small_pegasus.gif">
+          <img class="box" id="1" src="img/bubble.png">
           <img class="box" id="2" src="img/bubble.png">
-          <img class="box" id="3" src="img/crunch.png">
+          <img class="box" id="3" src="img/bubble.png">
           <img class="box" id="4" src="img/bubble.png">
-          <img class="box" id="5" src="img/robot.gif">
+          <img class="box" id="5" src="img/bubble.png">
           <img class="box" id="6" src="img/bubble.png">
           <img class="box" id="7" src="img/bubble.png">
-          <img class="box" id="8" src="img/wham.png">
+          <img class="box" id="8" src="img/bubble.png">
           <img class="box" id="9" src="img/bubble.png">
-          <img class="box" id="10" src="img/unicorn.png">
+          <img class="box" id="10" src="img/bubble.png">
           <img class="box" id="11" src="img/bubble.png">
-          <img class="box" id="12" src="img/penguin.gif">
-          <img class="box" id="13" src="img/skull.gif">
-          <img class="box" id="14" src="img/panda.gif">
-          <img class="box" id="15" src="img/parachute.gif">
+          <img class="box" id="12" src="img/bubble.png">
+          <img class="box" id="13" src="img/bubble.png">
+          <img class="box" id="14" src="img/bubble.png">
+          <img class="box" id="15" src="img/bubble.png">
           <img class="box" id="16" src="img/bubble.png">
-          <img class="box" id="17" src="img/smallRobot.gif">
-          <img class="box" id="18" src="img/windup.gif">
+          <img class="box" id="17" src="img/bubble.png">
+          <img class="box" id="18" src="img/bubble.png">
           <img class="box" id="19" src="img/bubble.png">
-          <img class="box" id="20" src="img/babyuni.gif">
-          <img class="box" id="21" src="img/catChasing.gif">
-          <img class="box" id="22" src="img/witch.gif">
-          <img class="box" id="23" src="img/ping.png">
+          <img class="box" id="20" src="img/bubble.png">
+          <img class="box" id="21" src="img/bubble.png">
+          <img class="box" id="22" src="img/bubble.png">
+          <img class="box" id="23" src="img/bubble.png">
           <img class="box" id="24" src="img/bubble.png">
-          <img class="box" id="25" src="img/star.gif">
-          <img class="box" id="26" src="img/camera.gif">
-          <img class="box" id="27" src="img/kaboom.png">
-          <img class="box" id="28" src="img/banana.gif">
-          <img class="box" id="29" src="img/ninjakid.gif">
-          <img class="box" id="30" src="img/girl.gif">
+          <img class="box" id="25" src="img/bubble.png">
+          <img class="box" id="26" src="img/bubble.png">
+          <img class="box" id="27" src="img/bubble.png">
+          <img class="box" id="28" src="img/bubble.png">
+          <img class="box" id="29" src="img/bubble.png">
+          <img class="box" id="30" src="img/bubble.png">
           <img class="box" id="31" src="img/bubble.png">
-          <img class="box" id="32" src="img/broccoli.gif">
+          <img class="box" id="32" src="img/bubble.png">
           <img class="box" id="33" src="img/bubble.png">
           <img class="box" id="34" src="img/bubble.png">
-          <img class="box" id="35" src="img/boom.png">
+          <img class="box" id="35" src="img/bubble.png">
           <img class="box" id="36" src="img/bubble.png">
-          <img class="box" id="37" src="img/mario.gif">
-          <img class="box" id="38" src="img/ninjaTurtle.gif">
-          <img class="box" id="39" src="img/butterfly.gif">
-          <img class="box" id="39" src="img/splat.png"
+          <img class="box" id="37" src="img/bubble.png">
+          <img class="box" id="38" src="img/bubble.png">
+          <img class="box" id="39" src="img/bubble.png">
+          <img class="box" id="39" src="img/bubble.png"
         </div>
         <br>
         <br>
@@ -130,10 +146,10 @@
 
 
 
-        <!-- <audio id="popsoundclip"></audio>
+        <audio id="popsoundclip"></audio>
         <source src="sound/Loading_Loop.wav"></source>
         <audio autoplay="autoplay" controls="controls" src="sound/Loading_Loop.wav" hidden="hidden" type="audio/wav" controls></audio>
- -->
+
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <!-- <script type="text/javascript" src="jQuery-Plugin-To-Create-Canvas-Based-Fireworks/jquery.fireworks.js"></script>
