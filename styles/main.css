@@ -135,8 +135,8 @@ nav a {
 }
 
 #grid_container {
-  width: 500px;
-  height: 100px;
+  width: 600px;
+  height: 800px;
   margin-top: auto;
   clear: both;
 }
@@ -157,4 +157,9 @@ nav a {
   font-size: 54px;
   /*color: gray;*/
   color: #0050ef;
+}
+
+.row {
+  position: fixed;
+  margin-bottom: auto;
 }

@@ -54,7 +54,7 @@ $('.instructions').hide();
 $('.title').show();
 $('.grid_container').show();
 $('.score_container').show();
-$('.timer').show();
+$('#timer').show();
 // soundIntro('sound/Loading_Loop.wav');
 }
 
@@ -105,7 +105,7 @@ var count = 21;
   });
 
 //append images to the DOM to replaced onclick bubble function-NOT WORKING
-var appendImages = ['img/vic.png', 'img/Small_pegasus.gif', 'img/broccoli.gif', 'img/butterfly.gif',
+var appendImages = ['img/vic.png', 'img/broccoli.gif', 'img/butterfly.gif',
  'img/cat.gif', 'img/fairy.gif', 'img/girl.gif', 'img/hamster.gif', 'img/mario.gif',
  'img/parachute.gif', 'img/penguin.gif', 'img/robot.gif', 'img/skull.gif', 'img/Small_pegasus.gif',
 'img/smallRobot.gif','img/star.gif', 'img/unicorn.png', 'img/witch.gif', 'img/boom.png', 'img/crunch.png',
@@ -138,7 +138,7 @@ $(document.body).on('click', '[src="img/winner.png"]', function(e){
 
 $(document.body).on('click', '.box', function(e){
   howMany++;
-  $('#scoreCount').text(howMany);
+  $('#info').text(howMany);
 });
 
 //higher level function for onClick image to sound pop, remove and points
@@ -149,14 +149,16 @@ $('.box').each(function() {
     $("#info").text(howMany);
     // (this).append(appendImages);
     $(this).remove();
+    console.log('i am removed')
 
 
     //appendImages
     var firstImage = appendImages.pop();
     if(firstImage){
-      $('.box').append('<img class="box" src="'+firstImage+'" />');
+      $('.grid_container').append('<img class="box" src="'+firstImage+'" />');
+      console.log('appendImages working')
     }
-    console.log('appendImages working')
+
   });
 });
 });
