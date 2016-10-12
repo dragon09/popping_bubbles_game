@@ -10,6 +10,15 @@ $(document).ready(function () {
     audio.play();
   }
 
+
+//sound should be connected to after Start button is clicked
+  // function  soundIntro(soundFile) {
+  //   var music = new Music(soundFile);
+  //   music.play();
+  // }
+
+
+
   // var startNewGame = $(".new")
   var howToPlay = $(".howTo")
 
@@ -17,8 +26,6 @@ $(document).ready(function () {
 
     // startNewGame.click(newGame)
     howToPlay.click(newHowTo)
-
-
 
 
 //How To Play link for game instructions
@@ -35,19 +42,19 @@ console.log('new yo')
 $(".start_button").click(startGame);
 
 
+//this function not working
 function startGame() {
   console.log('start button clicked')
 $('.instructions').hide();
 $('.grid_container').show();
 $('.score_container').show();
-$('.timer').show();
-$('.body').hide();
-
+$('.timer').hide();
+// soundIntro('sound/Loading_Loop.wav');
 }
 
   //countdown timer working
   function timer(){
-   	count = count-1;
+   	count = count -1;
    	if (count <= 0)
    	{
       clearInterval(counter);
@@ -73,6 +80,36 @@ $('.body').hide();
       console.log('how to is working');
   }
 
+
+//randomly changes the background on image click
+  function changeBackground() {
+      return '#' + Math.random().toString(16).slice(2, 8);
+  };
+  $(".box").on("click", function () {
+      $('body').css('background', changeBackground());
+  });
+
+
+var appendImages = ['img/Small_pegasus.gif', 'img/broccoli.gif', 'img/butterfly.gif',
+ 'img/cat.gif', 'img/fairy.gif', 'img/girl.gif', 'img/hamster.gif', 'img/mario.gif',
+ 'img/parachute.gif', 'img/penguin.gif', 'img/robot.gif', 'img/skull.gif', 'img/Small_pegasus.gif',
+'img/smallRobot.gif','img/star.gif', 'img/unicorn.png', 'img/witch.gif', 'img/boom.png', 'img/crunch.png',
+  'img/wham.png', 'img/splat.png', 'img/changer.gif', 'img/babyuni.gif', 'img/koala.gif', 'img/laugh.gif',
+'img/ow.png', 'img/musicnotes.gif', 'img/kaboom.png', 'img/ninjakid.gif', 'img/panda.gif', 'img/rotatingStar.gif',
+'img/ninjaTurtle.gif', 'img/catChasing.gif','img/windup.gif', 'img/camera.gif', 'img/banana.gif']
+count = 0;
+
+for (var i = 0; i < appendImages.length; i++) {
+  if (appendImages[i].length > count) {
+    // console.log(appendImages)
+  }
+}
+
+
+
+
+
+
 //player 1 scorebox
 var howMany = 0;
 
@@ -82,8 +119,9 @@ var howMany = 0;
 $('.box').each(function() {
   $(this).click(function() {
     playSound('sound/PopBanner-SoundBible.com-641783855.wav');
-    howMany += 1;
+    howMany += 10;
     $("#info").text(howMany);
+    $(this).append(appendImages);
     $(this).remove();
   });
 });
