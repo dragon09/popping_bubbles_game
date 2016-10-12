@@ -1,12 +1,9 @@
 $(document).ready(function () {
   console.log('ready')
 
-
-
-//pop sound working on click image
-  $("#0").click(function() {
-
-  })
+  var timerElement = $('timer');
+  var count = 21;
+  var counter = setInterval(timer, 1000);
 
   function playSound(soundFile) {
     var audio = new Audio(soundFile);
@@ -23,38 +20,32 @@ $(document).ready(function () {
 
 
 
-    $("#notification").fadeIn("slow").append('your message');
-    $(".dismiss").click(function(){
-           $("#notification").fadeOut("slow");
-    });
-
 
 //How To Play link for game instructions
 $(".howTo").click(function(){
     $(".overlay").fadeIn(1000);
 });
 
-starts a new game
+//starts a new game
 $(".new").click(function () {
 console.log('new yo')
 });
 
-//3-2-1 begin counter
-// var startCounter = 5;
-// var interval = setInterval(function () {
-//   startCounter--;
-//
-//   if (startCounter == 0) {
-//       clearInterval(interval);{
-//       }
-//   }
+//function called after the "Start Game" button is clicked
+$(".start_button").click(startGame);
 
+
+function startGame() {
+  console.log('start button clicked')
+$('.instructions').hide();
+$('.grid_container').show();
+$('.score_container').show();
+$('.timer').show();
+$('.body').hide();
+
+}
 
   //countdown timer working
-  var timerElement = $('timer');
-  var count = 21;
-  var counter = setInterval(timer, 1000);
-
   function timer(){
    	count = count-1;
    	if (count <= 0)
@@ -65,6 +56,7 @@ console.log('new yo')
    	$("#timer").text(count);
   };
   timer();
+
 
 
   $(".ready").click(function(){
@@ -96,6 +88,7 @@ $('.box').each(function() {
   });
 });
 });
+
 
 // for(var i=0;i<numberOfImages;i++) {
 //   $('#'+i).click(function(){
