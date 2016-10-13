@@ -41,9 +41,9 @@ console.log('new yo')
 $(".start_button").click(startGame);
 
 
-$('.title').hide();
-$('.grid_container').hide();
-$('.score_container').hide();
+// $('.title').hide();
+// $('.grid_container').hide();
+// $('.score_container').hide();
 
 
 
@@ -112,7 +112,9 @@ var appendImages = ['img/vic.png', 'img/broccoli.gif', 'img/butterfly.gif',
   'img/wham.png', 'img/splat.png', 'img/changer.gif', 'img/babyuni.gif', 'img/koala.gif', 'img/laugh.gif',
 'img/ow.png', 'img/musicnotes.gif', 'img/kaboom.png', 'img/ninjakid.gif', 'img/panda.gif',
 'img/ninjaTurtle.gif', 'img/catChasing.gif','img/windup.gif', 'img/camera.gif', 'img/banana.gif']
-count = 0;
+
+appendImages.sort(function() { return 0.5 - Math.random() });
+
 
 // for (var i = 0; i < appendImages.length; i++) {
 //   if (appendImages[i].length > count) {
@@ -128,11 +130,11 @@ var howMany = 0;
 // var numberOfImages = $(‘.box’).length;
 
 
-$(document.body).on('click', '[src="img/gameOver.png"]', function(e){
+$(document.body).on('click', '[src="../img/gameOver.png"]', function(e){
   $('#gameover').show();
 });
 
-$(document.body).on('click', '[src="img/winner.png"]', function(e){
+$(document.body).on('click', '[src="../img/winner.png"]', function(e){
   $('#winner').show();
 });
 
@@ -155,13 +157,12 @@ $('.box').each(function() {
     //appendImages
     var firstImage = appendImages.pop();
     if(firstImage){
-      $('.grid_container').append('<img class="box" src="'+firstImage+'" />');
+      $('.images_container').append('<img class="box" src="'+firstImage+'" />');
       console.log('appendImages working')
     }
-
   });
-});
-});
+    });
+      });
 
 
 //puedocode function to check how many points player has and then increase level

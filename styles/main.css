@@ -148,18 +148,23 @@ nav a {
 
 .score_container {
   border:  3px solid #fff;
-  height: 300px;
-  width: 225px;
-  margin: auto;
+  height: 150px;
+  width: 150px;
+  /*margin: auto;*/
+  float: right;
+  padding-left: 20px;
+}
+
+.score_container2 {
+  border:  3px solid #fff;
+  height: 150px;
+  width: 150px;
+  /*margin: auto;*/
+  float: left;
 }
 
 #timer {
   font-size: 54px;
   /*color: gray;*/
   color: #0050ef;
-}
-
-.row {
-  position: fixed;
-  margin-bottom: auto;
 }
