@@ -18,12 +18,12 @@ $(document).ready(function () {
   // }
 
 
-  // var startNewGame = $(".new")
+  var startNewGame = $(".new")
   var howToPlay = $(".howTo")
 
 
 
-    // startNewGame.click(newGame)
+
     howToPlay.click(newHowTo)
 
 
@@ -39,7 +39,6 @@ console.log('new yo')
 
 //function called after the "Start Game" button is clicked
 $(".start_button").click(startGame);
-
 
 // $('.title').hide();
 // $('.grid_container').hide();
@@ -104,7 +103,7 @@ var count = 21;
       $('body').css('background', changeBackground());
   });
 
-//append images to the DOM to replaced onclick bubble function-NOT WORKING
+//append images to the DOM onclick bubble function
 var appendImages = ['img/vic.png', 'img/broccoli.gif', 'img/butterfly.gif',
  'img/cat.gif', 'img/fairy.gif', 'img/girl.gif', 'img/hamster.gif', 'img/mario.gif',
  'img/parachute.gif', 'img/penguin.gif', 'img/robot.gif', 'img/skull.gif', 'img/Small_pegasus.gif',
@@ -143,7 +142,7 @@ $(document.body).on('click', '.box', function(e){
   $('#info').text(howMany);
 });
 
-//higher level function for onClick image to sound pop, remove and points
+//higher level function for onClick image to sound pop, remove and add points
 $('.box').each(function() {
   $(this).click(function() {
     playSound('sound/PopBanner-SoundBible.com-641783855.wav');
@@ -154,6 +153,20 @@ $('.box').each(function() {
     console.log('i am removed')
 
 
+startNewGame.click(newGame)
+
+function newGame() {
+  console.log('THIS IS A NEW GAME CLICK')
+  $('.box').each(function() {
+    $(this).click(function() {
+      playSound('sound/PopBanner-SoundBible.com-641783855.wav');
+      howMany += 10;
+      $("#info").text(howMany);
+      // (this).append(appendImages);
+      $(this).remove();
+});
+});
+}
     //appendImages
     var firstImage = appendImages.pop();
     if(firstImage){
