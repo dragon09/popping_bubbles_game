@@ -55,7 +55,13 @@ body {
 	letter-spacing: 1px;
 	/*color: #3d4970;*/
   background-color: #0099FF;
+}
 
+.container {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .start_button {
@@ -167,4 +173,8 @@ nav a {
   font-size: 54px;
   /*color: gray;*/
   color: #0050ef;
+}
+
+#timesup {
+  position: relative;
 }

@@ -21,9 +21,6 @@ $(document).ready(function () {
   var startNewGame = $(".new")
   var howToPlay = $(".howTo")
 
-
-
-
     howToPlay.click(newHowTo)
 
 
@@ -40,9 +37,9 @@ console.log('new yo')
 //function called after the "Start Game" button is clicked
 $(".start_button").click(startGame);
 
-// $('.title').hide();
-// $('.grid_container').hide();
-// $('.score_container').hide();
+$('.title').hide();
+$('.grid_container').hide();
+$('.score_container').hide();
 
 
 
@@ -59,7 +56,7 @@ $('#timer').show();
 
 //for timer
 var timerElement = $('#timer');
-var count = 21;
+var count = 25;
 //var counter = setInterval(timer, 1000);
 
   //countdown timer working
@@ -70,7 +67,7 @@ var count = 21;
       //clearInterval(counter);
 
       // time's up!
-    $('#container').append('<img src="img/popbubgrad.png" />')
+    $('#timer').append('<img id="timesup" src="img/timesup.png" />')
 
       return;
    	}
@@ -129,11 +126,12 @@ var howMany = 0;
 // var numberOfImages = $(‘.box’).length;
 
 
-$(document.body).on('click', '[src="../img/gameOver.png"]', function(e){
+$(document.body).on('click', '[src="img/skull.gif"]', function(e){
+  alert('working!')
   $('#gameover').show();
 });
 
-$(document.body).on('click', '[src="../img/winner.png"]', function(e){
+$(document.body).on('click', '[src="img/winner.png"]', function(e){
   $('#winner').show();
 });
 
@@ -141,6 +139,11 @@ $(document.body).on('click', '.box', function(e){
   howMany++;
   $('#info').text(howMany);
 });
+
+
+
+
+
 
 //higher level function for onClick image to sound pop, remove and add points
 $('.box').each(function() {
