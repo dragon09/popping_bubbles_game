@@ -1,13 +1,13 @@
 $(document).ready(function () {
   console.log('ready')
-  // document.getElementById("./sound/Loading_Loop.wav").play();
+  document.getElementById("win").play();
   // document.getElementById('sound/Ta Da-SoundBible.com-1884170640.wav').play();
 
-  //onClick pop sound
-  // function playSound(soundFile) {
-  //   var audio = new Audio(soundFile);
-  //   audio.play();
-  // }
+  // onClick pop sound
+  function playSound(soundFile) {
+    var audio = new Audio(soundFile);
+    audio.play();
+  }
 
 
 
@@ -241,7 +241,9 @@ $(document).ready(function () {
         winning++;
         if(winning>2){
           // You won!
-
+          alert('Its magical!  You collected 2 unicorns AND a pegasus!  Nothing can top that! You win!!!')
+          document.getElementById("win").play().show();
+          $('#winner').show();
           return;
         }
       }
@@ -253,10 +255,10 @@ $(document).ready(function () {
         appendImage();
         appendImage();
         info.addScore(200);
-        $('sound/Ta Da-SoundBible.com-1884170640.wav').play();
+        // $('sound/Ta Da-SoundBible.com-1884170640.wav').play();
       } else if (firstImage=='img/skull.gif') {
         alert('Sorry! You clicked on the scary skull and lose -100 points and 5 of your images.')
-        $('.images_container img').slice(0, 3).remove();
+        $('.images_container img').slice(0, 5).remove();
         info.removeScore(100);
 
       } else if (firstImage=='img/vic.png') {
@@ -264,22 +266,23 @@ $(document).ready(function () {
         appendImage();
         appendImage();
         info.addScore(200);
-      } else if (firstImage=='img/unicorn.png' && 'img/Small_pegasus.gif' && 'img/babyuni.gif') {
-        alert('It/s magical!  You collected 2 unicorns AND a pegasus!  Nothing can top that! You win!!!')
-        $('#winner').show();
-      } else {
-        info.addScore(10);
       }
+    }
+      // else if (firstImage=='img/unicorn.png' && 'img/Small_pegasus.gif' && 'img/babyuni.gif') {
+      //   alert('It/s magical!  You collected 2 unicorns AND a pegasus!  Nothing can top that! You win!!!')
+      //   $('#winner').show();
+      // } else {
+      //   info.addScore(10);
+      // }
         // });
     }
-  }
+  // }
 
 
   //higher level function for onClick image to sound pop, remove and add points
   $('.box').each(function() {
     $(this).click(function() {
-
-      // playSound('sound/PopBanner-SoundBible.com-641783855.wav');
+      playSound('sound/PopBanner-SoundBible.com-641783855.wav');
       // howMany += 10;
       // $("#info").text(howMany);
       // (this).append(appendImages);
