@@ -196,3 +196,7 @@ nav a {
 #timesup {
   position: relative;
 }
+
+.score_container2 {
+  display: none;
+}

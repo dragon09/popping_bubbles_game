@@ -1,18 +1,15 @@
 $(document).ready(function () {
   console.log('ready')
-
+  // document.getElementById("./sound/Loading_Loop.wav").play();
+  // document.getElementById('sound/Ta Da-SoundBible.com-1884170640.wav').play();
 
   //onClick pop sound
-  function playSound(soundFile) {
-    var audio = new Audio(soundFile);
-    audio.play();
-  }
+  // function playSound(soundFile) {
+  //   var audio = new Audio(soundFile);
+  //   audio.play();
+  // }
 
-  function introMusic(soundFile) {
-    var audio1 = document.createElement('audio1');
-  }
 
-audio1.src = ('sound/Loading_Loop.wav')
 
 
   //sound should be connected to after Start button is clicked
@@ -39,7 +36,7 @@ audio1.src = ('sound/Loading_Loop.wav')
   });
 
   //function called after the "Start Game" button is clicked
-  $(".start_button").click(startGame);
+  $("#start_button").click(startGame);
 
   $('.title').hide();
   $('.grid_container').hide();
@@ -69,6 +66,7 @@ audio1.src = ('sound/Loading_Loop.wav')
 
     //countdown timer working
   function timer(){
+    $('.score_container2').show();
     isTimerStarted = true;
    	count--;
    	if (count <= 0)	{
@@ -80,6 +78,7 @@ audio1.src = ('sound/Loading_Loop.wav')
       // time's up!
       // append the image
       $('#timer').append('<img id="timesup" src="img/timesup.png" />')
+
 
 
 
@@ -148,8 +147,8 @@ audio1.src = ('sound/Loading_Loop.wav')
 
 
   $(document.body).on('click', '.box', function(e){
-    howMany++;
-    $('#info').text(howMany);
+    // howMany++;
+    // $('#info').text(howMany);
     $('body').css('background', changeBackground());
   });
   //randomly changes the background on image click
@@ -164,9 +163,12 @@ audio1.src = ('sound/Loading_Loop.wav')
     addScore: function(num) {
       //this.info += num;
       this.scoreCounter += num;
-      $('#info').text(this.scoreCounter);
+      //$('#info').text(this.scoreCounter);
       collect10();
-      return;
+    },
+    removeScore: function(num){
+      this.scoreCounter -= num;
+      collect10();
     }
   };
 
@@ -184,25 +186,28 @@ audio1.src = ('sound/Loading_Loop.wav')
 
   //if/else logic for level up
   function collect10() {
-    if (level.compareLevel < 2 && info.scoreCounter >= 11) {
-      console.log('got 12')
-      level.levelUp(1);
-      $('.level').show();
-      setTimeout(function(){
-        $('.level').fadeOut();
-      }, 5000);
-    }
-    else if (level.compareLevel < 12 && info.scoreCounter >= 21) {
-      level.levelUp(1);
-      $('.level').show();
-    }
-    else if (level.compareLevel < 22 && info.scoreCounter >= 41) {
-      level.levelUp(1);
-      $('.level').show();
-    }
-    else {
-      console.log('this is working');
-    }
+    // if (level.compareLevel < 2 && info.scoreCounter >= 11) {
+    //   console.log('got 12')
+    //   level.levelUp(1);
+    //   $('.level').show();
+    //   $('sound/Ta Da-SoundBible.com-1884170640.wav').play();
+    //   setTimeout(function(){
+    //     $('.level').fadeOut();
+    //   }, 5000);
+    // }
+    // else if (level.compareLevel < 12 && info.scoreCounter >= 21) {
+    //   level.levelUp(1);
+    //   $('.level').show();
+    // }
+    // else if (level.compareLevel < 22 && info.scoreCounter >= 41) {
+    //   level.levelUp(1);
+    //   $('.level').show();
+    // }
+    // else {
+    //   console.log('this is working');
+    // }
+
+    $('#info').text(info.scoreCounter);
   }
   collect10();
 
@@ -214,13 +219,15 @@ audio1.src = ('sound/Loading_Loop.wav')
     console.log('THIS IS A NEW GAME CLICK')
     $('.box').each(function() {
       $(this).click(function() {
-        playSound('sound/PopBanner-SoundBible.com-641783855.wav');
-        howMany += 10;
-        $("#info").text(howMany);
+        // document.getElementById("./sound/Loading_Loop.wav").play();
+        // howMany += 10;
+        // $("#info").text(howMany);
         $(this).remove();
       });
     });
   }
+
+  var winning = 0;
 
   function appendImage(){
     var firstImage = appendImages.pop();
@@ -228,26 +235,41 @@ audio1.src = ('sound/Loading_Loop.wav')
       $('.images_container').append('<img class="box" src="'+firstImage+'" />');
       console.log('appendImages working');
 
+      // 'img/unicorn.png' && 'img/Small_pegasus.gif' && 'img/babyuni.gif'
+
+      if( firstImage == 'img/unicorn.png' || firstImage == 'img/Small_pegasus.gif' || firstImage == 'img/babyuni.gif'){
+        winning++;
+        if(winning>2){
+          // You won!
+
+          return;
+        }
+      }
+      // if( firstImage == '  scull.png')
+
       if(firstImage=='img/unicorn.png'){
         alert('You found a special unicorn and earned 3 More Images! + 200 points!')
         appendImage();
         appendImage();
         appendImage();
         info.addScore(200);
+        $('sound/Ta Da-SoundBible.com-1884170640.wav').play();
       } else if (firstImage=='img/skull.gif') {
         alert('Sorry! You clicked on the scary skull and lose -100 points and 5 of your images.')
-        appendImages.remove('<img class="box" src="'+firstImage+'" />');
-        // appendImages.remove('<img class="box" src="'+firstImage+'" />');
-        // appendImages.remove('<img class="box" src="'+firstImage+'" />');
+        $('.images_container img').slice(0, 3).remove();
+        info.removeScore(100);
+
       } else if (firstImage=='img/vic.png') {
         alert('You found my baby picture!  Collect ++200 points and 2 More images!')
         appendImage();
         appendImage();
         info.addScore(200);
       } else if (firstImage=='img/unicorn.png' && 'img/Small_pegasus.gif' && 'img/babyuni.gif') {
-        alert('It/s magical!  You found 2 unicorns AND a pegasus!  Nothing can top that! You win!!!')
+        alert('It/s magical!  You collected 2 unicorns AND a pegasus!  Nothing can top that! You win!!!')
         $('#winner').show();
-        }
+      } else {
+        info.addScore(10);
+      }
         // });
     }
   }
@@ -257,9 +279,9 @@ audio1.src = ('sound/Loading_Loop.wav')
   $('.box').each(function() {
     $(this).click(function() {
 
-      playSound('sound/PopBanner-SoundBible.com-641783855.wav');
-      howMany += 10;
-      $("#info").text(howMany);
+      // playSound('sound/PopBanner-SoundBible.com-641783855.wav');
+      // howMany += 10;
+      // $("#info").text(howMany);
       // (this).append(appendImages);
       $(this).remove();
       console.log('i am removed')
