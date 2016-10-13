@@ -128,10 +128,20 @@ var howMany = 0;
 // var numberOfImages = $(‘.box’).length;
 
 
-$(document.body).on('click', '[src="img/skull.gif"]', function(e){
-  alert('working!')
-  $('#gameover').show();
-});
+
+function loseImages() {
+  if ('[src="img/skull.gif"]', is revealed) }
+  --100 points('#info') && remove --3 images on DOM back to appendImages array
+  }
+
+// $(document.body).on('click', '[src="img/skull.gif"]', function(e){
+//   alert('working!')
+//   $('#gameover').show();
+// });
+function addImages() {
+  if ('img/unicorn.png') is revealed) }
+  ++200 points('#info)' && .pop ++3 images to DOM from appendImages array
+}
 
 $(document.body).on('click', '[src="img/winner.png"]', function(e){
   $('#winner').show();
@@ -142,6 +152,8 @@ $(document.body).on('click', '.box', function(e){
   $('#info').text(howMany);
 });
 
+
+//checkScore to add level
 var checkScore = {
   scoreCounter: 0,
   addScore: function(num) {
@@ -151,6 +163,8 @@ var checkScore = {
   }
 };
 
+
+//add one level
 var level = {
   compareLevel: 1,
   levelUp: function(num) {
@@ -160,8 +174,7 @@ var level = {
   }
 };
 
-//if/else logic
-
+//if/else logic for level up
 function collect10() {
   if (level.compareLevel < 2 && info.scoreCounter >= 11) {
     console.log('got 12')
