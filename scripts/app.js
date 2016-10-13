@@ -40,6 +40,7 @@ $(".start_button").click(startGame);
 $('.title').hide();
 $('.grid_container').hide();
 $('.score_container').hide();
+$('.container2').hide();
 
 
 
@@ -54,6 +55,7 @@ $('#timer').show();
 // soundIntro('sound/Loading_Loop.wav');
 }
 
+
 //for timer
 var timerElement = $('#timer');
 var count = 25;
@@ -67,7 +69,7 @@ var count = 25;
       //clearInterval(counter);
 
       // time's up!
-    $('#timer').append('<img id="timesup" src="img/timesup.png" />')
+    // $('#timer').append('<img id="timesup" src="img/timesup.png" />')
 
       return;
    	}
@@ -140,7 +142,46 @@ $(document.body).on('click', '.box', function(e){
   $('#info').text(howMany);
 });
 
+var checkScore = {
+  scoreCounter: 0,
+  addScore: function(num) {
+    this.info += num;
+    $('#info').text(this.scoreCounter);
+    return;
+  }
+};
 
+var level = {
+  compareLevel: 1,
+  levelUp: function(num) {
+    this.compareLevel += num;
+    $('#level_number').text(this.level_number);
+    return;
+  }
+};
+
+//if/else logic
+
+function collect10() {
+  if (level.compareLevel < 2 && info.scoreCounter >= 11) {
+    console.log('got 12')
+    level.levelUp(1);
+    $('level').show();
+  }
+  else if (level.compareLevel < 12 && info.scoreCounter >= 21) {
+    level.levelUp(1);
+    $('level').show();
+  }
+  else if (level.compareLevel < 22 && info.scoreCounter >= 41) {
+    level.levelUp(1);
+    $('level').show();
+  }
+
+  else {
+    console.log('this is working');
+    }
+}
+collect10();
 
 
 

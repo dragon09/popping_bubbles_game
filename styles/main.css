@@ -169,6 +169,24 @@ nav a {
   float: left;
 }
 
+.checkTimer {
+  border:  3px solid #fff;
+  height: 150px;
+  width: 150px;
+  font-size: 44px;
+  font-weight: 300;
+  /*color: #fff;*/
+  color: #0050ef;
+}
+
+
+
+#level_number {
+  font-size: 54px;
+  /*color: gray;*/
+  color: #0050ef;
+}
+
 #timer {
   font-size: 54px;
   /*color: gray;*/
