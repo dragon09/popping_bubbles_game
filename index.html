@@ -30,6 +30,9 @@
 </head>
 <body>
   <audio id="win" style="display:none" src="./sound/Ta Da-SoundBible.com-1884170640.wav"></audio>
+  <audio id="zerotime" style="display:none" src="./sound/timesup.wav"></audio>
+  <audio id="mario" style="display:none" src="sound/mario-game-over.mp3"></audio>
+  <audio id="coin" style="display:none" src="sound/Mario-coin-sound.mp3"></audio>
 
 
   <div class="container">
@@ -65,8 +68,8 @@
     <img src="img/skull.gif" style="display:none" alt="" />
     </div>
     <!-- time/s up image -->
-    <!-- <img id="timesup" src="img/timesup.png" style="display:none" />
-    $('#timer').show(); -->
+    <img id="timesup" src="img/timesup.png" style="display:none" />
+    <!-- $('#timer').show(); -->
 
     <div id="winner" style="display:none">
           <img src="img/zoom.png" alt="" />
@@ -99,7 +102,7 @@
       <div id="info" style="font-size: 54px; color: #0050ef;"> 0 </div>
       </div>
       <div class="score_container2">
-      <h2 class='time'>Timer:</h2><p id='timer'>0</p>
+      <h2 class='time'>Timer:</h2><p id='clock'>0</p>
       <div class="checkTimer"
       <h2 class='level' style="display:none">Level:</h2><p id="level_number">0</p>
     </div>

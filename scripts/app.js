@@ -1,6 +1,6 @@
 $(document).ready(function () {
   console.log('ready')
-  document.getElementById("win").play();
+  // document.getElementById("win").play();
   // document.getElementById('sound/Ta Da-SoundBible.com-1884170640.wav').play();
 
   // onClick pop sound
@@ -58,8 +58,8 @@ $(document).ready(function () {
 
 
   //for timer
-  var timerElement = $('#timer');
-  var count = 25;
+  var timerElement = $('#clock');
+  var count = 2;
 
   var isTimerStarted = false;
   //var counter = setInterval(timer, 1000);
@@ -77,7 +77,8 @@ $(document).ready(function () {
 
       // time's up!
       // append the image
-      $('#timer').append('<img id="timesup" src="img/timesup.png" />')
+      $('#clock').append('<img id="timesup" src="img/timesup.png" />')
+      $('#zerotime').show();
 
 
 
@@ -91,7 +92,7 @@ $(document).ready(function () {
       return;
    	}
     setTimeout(timer, 1000);
-   	$("#timer").text(count);
+   	$("#clock").text(count);
   };
 
   $('#start_button').click(function(){
@@ -126,7 +127,7 @@ $(document).ready(function () {
   'img/smallRobot.gif','img/star.gif', 'img/unicorn.png', 'img/witch.gif', 'img/boom.png', 'img/crunch.png',
     'img/wham.png', 'img/splat.png', 'img/changer.gif', 'img/babyuni.gif', 'img/koala.gif', 'img/laugh.gif',
   'img/ow.png', 'img/musicnotes.gif', 'img/kaboom.png', 'img/ninjakid.gif', 'img/panda.gif',
-  'img/ninjaTurtle.gif', 'img/catChasing.gif','img/windup.gif', 'img/camera.gif', 'img/banana.gif']
+  'img/ninjaTurtle.gif', 'img/catChasing.gif','img/windup.gif', 'img/camera.gif', 'img/banana.gif', 'img/skull2.gif']
 
   appendImages.sort(function() { return 0.5 - Math.random() });
 
@@ -163,7 +164,7 @@ $(document).ready(function () {
     addScore: function(num) {
       //this.info += num;
       this.scoreCounter += num;
-      //$('#info').text(this.scoreCounter);
+      // $('#info').text(this.scoreCounter);
       collect10();
     },
     removeScore: function(num){
@@ -228,6 +229,7 @@ $(document).ready(function () {
   }
 
   var winning = 0;
+  var losing = -500;
 
   function appendImage(){
     var firstImage = appendImages.pop();
@@ -242,15 +244,25 @@ $(document).ready(function () {
         if(winning>2){
           // You won!
           alert('Its magical!  You collected 2 unicorns AND a pegasus!  Nothing can top that! You win!!!')
-          document.getElementById("win").play().show();
+          document.getElementById("win").play();
           $('#winner').show();
           return;
         }
       }
-      // if( firstImage == '  scull.png')
+        if( firstImage == 'img/changer.gif' || firstImage == 'img/skull.gif' || 'img/skull2.gif') {
+          losing--;
+          if(losing>2){
+            alert('Sorry!  Having a bad day?  You collected 3 different skulls...Nobody wins this way!')
+            document.getElementById("mario").play();
+            $('#gameover').show();
+            return;
+          }
+
+        }
 
       if(firstImage=='img/unicorn.png'){
         alert('You found a special unicorn and earned 3 More Images! + 200 points!')
+        $('#coin').show();
         appendImage();
         appendImage();
         appendImage();
@@ -258,11 +270,13 @@ $(document).ready(function () {
         // $('sound/Ta Da-SoundBible.com-1884170640.wav').play();
       } else if (firstImage=='img/skull.gif') {
         alert('Sorry! You clicked on the scary skull and lose -100 points and 5 of your images.')
+        $('#skull').show();
         $('.images_container img').slice(0, 5).remove();
         info.removeScore(100);
 
       } else if (firstImage=='img/vic.png') {
         alert('You found my baby picture!  Collect ++200 points and 2 More images!')
+        $('#coin').show();
         appendImage();
         appendImage();
         info.addScore(200);

@@ -187,7 +187,7 @@ nav a {
   color: #0050ef;
 }
 
-#timer {
+#clock {
   font-size: 54px;
   /*color: gray;*/
   color: #0050ef;
@@ -195,6 +195,11 @@ nav a {
 
 #timesup {
   position: relative;
+  /*float:left;*/
+  padding: 155px;
+  padding-left: 155px;
+  padding-bottom: 155px;
+  width: 700px;
 }
 
 .score_container2 {
