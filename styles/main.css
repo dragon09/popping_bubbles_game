@@ -1,54 +1,3 @@
-/*@-webkit-keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    49% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-@-moz-keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    49% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-@-o-keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    49% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}*/
-/*img {
-    -webkit-animation: blink 1s;
-    -webkit-animation-iteration-count: infinite;
-    -moz-animation: blink 1s;
-    -moz-animation-iteration-count: infinite;
-    -o-animation: blink 1s;
-    -o-animation-iteration-count: infinite;
-}*/
-
 body {
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
     text-align: center;
@@ -60,8 +9,9 @@ body {
 .container {
   margin-top: 5%;
   margin-bottom: 5%;
-  margin-left: 5%;
+  margin-left: 10%;
   margin-right: 5%;
+  width: 100%;
 }
 
 .start_button {
@@ -70,6 +20,8 @@ body {
 
 #logo{
   border: #fff solid 3px;
+  /*position: fixed;*/
+  /*?margin-right: 150px;*/
 }
 
 .instructions {
@@ -105,9 +57,7 @@ h2 {
   width: 100%;
   height: 100%;
   color: #fff;
-  /*background: #e74c3c;*/
   background: #AA076B;
-  /*background: url('../img/background_image.jpg')*/
   position: absolute;
   top: 0;
   left: 0;
@@ -167,29 +117,16 @@ nav a {
   width: 150px;
   /*margin: auto;*/
   float: left;
+  display: none;
 }
 
-.checkTimer {
-  border:  3px solid #fff;
-  height: 150px;
-  width: 150px;
-  font-size: 44px;
-  font-weight: 300;
-  /*color: #fff;*/
-  color: #0050ef;
-}
-
-
-
-#level_number {
+/*#level_number {
   font-size: 54px;
-  /*color: gray;*/
   color: #0050ef;
-}
+}*/
 
 #clock {
   font-size: 54px;
-  /*color: gray;*/
   color: #0050ef;
 }
 
@@ -202,6 +139,6 @@ nav a {
   width: 700px;
 }
 
-.score_container2 {
+/*.score_container2 {
   display: none;
-}
+}*/

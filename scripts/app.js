@@ -2,6 +2,9 @@ $(document).ready(function () {
   console.log('ready')
   // document.getElementById("win").play();
   // document.getElementById('sound/Ta Da-SoundBible.com-1884170640.wav').play();
+  // var audio2 = document.getElementById("mario").play();
+  // var audio3 = document.getElementById("coin").play();
+  // var audio4 = document.getElementById("zerotime").play();
 
   // onClick pop sound
   function playSound(soundFile) {
@@ -59,7 +62,7 @@ $(document).ready(function () {
 
   //for timer
   var timerElement = $('#clock');
-  var count = 2;
+  var count = 25;
 
   var isTimerStarted = false;
   //var counter = setInterval(timer, 1000);
@@ -69,19 +72,17 @@ $(document).ready(function () {
     $('.score_container2').show();
     isTimerStarted = true;
    	count--;
+    $("#clock").text(count);
+
    	if (count <= 0)	{
       // stop interval
       //clearInterval(counter);
 
-
-
       // time's up!
       // append the image
-      $('#clock').append('<img id="timesup" src="img/timesup.png" />')
-      $('#zerotime').show();
-
-
-
+      //$('#clock').append('<img id="timesup" src="img/timesup.png" />')
+      $('#timesup').show();
+      // $('#zerotime').play();
 
       // remove the image after 5 seconds
       setTimeout(function(){
@@ -92,7 +93,6 @@ $(document).ready(function () {
       return;
    	}
     setTimeout(timer, 1000);
-   	$("#clock").text(count);
   };
 
   $('#start_button').click(function(){
@@ -127,7 +127,8 @@ $(document).ready(function () {
   'img/smallRobot.gif','img/star.gif', 'img/unicorn.png', 'img/witch.gif', 'img/boom.png', 'img/crunch.png',
     'img/wham.png', 'img/splat.png', 'img/changer.gif', 'img/babyuni.gif', 'img/koala.gif', 'img/laugh.gif',
   'img/ow.png', 'img/musicnotes.gif', 'img/kaboom.png', 'img/ninjakid.gif', 'img/panda.gif',
-  'img/ninjaTurtle.gif', 'img/catChasing.gif','img/windup.gif', 'img/camera.gif', 'img/banana.gif', 'img/skull2.gif']
+  'img/ninjaTurtle.gif', 'img/catChasing.gif','img/windup.gif', 'img/camera.gif', 'img/banana.gif', 'img/skreech.png',
+  'img/skull2.gif', 'img/crunch.png', 'img/pow.png', 'img/rotatingStar.gif']
 
   appendImages.sort(function() { return 0.5 - Math.random() });
 
@@ -147,15 +148,10 @@ $(document).ready(function () {
 
 
 
-  $(document.body).on('click', '.box', function(e){
-    // howMany++;
-    // $('#info').text(howMany);
-    $('body').css('background', changeBackground());
-  });
-  //randomly changes the background on image click
-  function changeBackground() {
-      return '#' + Math.random().toString(16).slice(2, 8);
-  };
+
+
+
+
 
 
   //checkScore to add level
@@ -175,15 +171,15 @@ $(document).ready(function () {
 
 
   //add one level
-  var level = {
-    compareLevel: 1,
-    levelUp: function(num) {
-      this.compareLevel += num;
-      $('#level_number').text(this.level_number);
-      collect10();
-      return;
-    }
-  };
+  // var level = {
+  //   compareLevel: 1,
+  //   levelUp: function(num) {
+  //     this.compareLevel += num;
+  //     $('#level_number').text(this.level_number);
+  //     collect10();
+  //     return;
+  //   }
+  // };
 
   //if/else logic for level up
   function collect10() {
@@ -229,7 +225,7 @@ $(document).ready(function () {
   }
 
   var winning = 0;
-  var losing = -500;
+  var losing = 0;
 
   function appendImage(){
     var firstImage = appendImages.pop();
@@ -249,38 +245,43 @@ $(document).ready(function () {
           return;
         }
       }
-        if( firstImage == 'img/changer.gif' || firstImage == 'img/skull.gif' || 'img/skull2.gif') {
-          losing--;
-          if(losing>2){
-            alert('Sorry!  Having a bad day?  You collected 3 different skulls...Nobody wins this way!')
-            document.getElementById("mario").play();
-            $('#gameover').show();
-            return;
-          }
-
+      if( firstImage == 'img/changer.gif' || firstImage == 'img/skull.gif' ||  firstImage == 'img/skull2.gif') {
+        losing++;
+        if(losing>2){
+          alert('Sorry!  Having a bad day?  You collected 3 different skulls...Nobody wins this way!');
+          audio2.play();
+          $('#gameover').show();
+          return;
         }
+
+      }
 
       if(firstImage=='img/unicorn.png'){
         alert('You found a special unicorn and earned 3 More Images! + 200 points!')
+        audio3.play();
         $('#coin').show();
         appendImage();
         appendImage();
         appendImage();
         info.addScore(200);
-        // $('sound/Ta Da-SoundBible.com-1884170640.wav').play();
-      } else if (firstImage=='img/skull.gif') {
+
+      } else if (firstImage =='img/skull.gif') {
         alert('Sorry! You clicked on the scary skull and lose -100 points and 5 of your images.')
         $('#skull').show();
         $('.images_container img').slice(0, 5).remove();
         info.removeScore(100);
 
-      } else if (firstImage=='img/vic.png') {
+      } else if (firstImage =='img/vic.png') {
         alert('You found my baby picture!  Collect ++200 points and 2 More images!')
         $('#coin').show();
         appendImage();
         appendImage();
         info.addScore(200);
+      } else {
+        info.addScore(10);
       }
+
+
     }
       // else if (firstImage=='img/unicorn.png' && 'img/Small_pegasus.gif' && 'img/babyuni.gif') {
       //   alert('It/s magical!  You collected 2 unicorns AND a pegasus!  Nothing can top that! You win!!!')
@@ -296,6 +297,7 @@ $(document).ready(function () {
   //higher level function for onClick image to sound pop, remove and add points
   $('.box').each(function() {
     $(this).click(function() {
+      $('body').css('background', randomColor());
       playSound('sound/PopBanner-SoundBible.com-641783855.wav');
       // howMany += 10;
       // $("#info").text(howMany);
@@ -308,6 +310,17 @@ $(document).ready(function () {
 
     });
   });
+
+
+  // $(document.body).on('click', '.box', function(e){
+  //   // howMany++;
+  //   // $('#info').text(howMany);
+  //   $('body').css('background', randomColor());
+  // });
+  //randomly changes the background on image click
+  function randomColor() {
+      return '#' + Math.random().toString(16).slice(2, 8);
+  };
 
 
 }); // on document ready
