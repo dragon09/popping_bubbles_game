@@ -2,9 +2,9 @@ $(document).ready(function () {
   console.log('ready')
   // document.getElementById("win").play();
   // document.getElementById('sound/Ta Da-SoundBible.com-1884170640.wav').play();
-  // var audio2 = document.getElementById("mario").play();
-  // var audio3 = document.getElementById("coin").play();
-  // var audio4 = document.getElementById("zerotime").play();
+  var audio2 = document.getElementById("mario");
+  var audio3 = document.getElementById("coin");
+  var audio4 = document.getElementById("zerotime");
 
   // onClick pop sound
   function playSound(soundFile) {
@@ -267,18 +267,21 @@ $(document).ready(function () {
 
       } else if (firstImage =='img/skull.gif') {
         alert('Sorry! You clicked on the scary skull and lose -100 points and 5 of your images.')
+        audio3.play();
         $('#skull').show();
         $('.images_container img').slice(0, 5).remove();
         info.removeScore(100);
 
       } else if (firstImage =='img/vic.png') {
         alert('You found my baby picture!  Collect ++200 points and 2 More images!')
+        audio3.play();
         $('#coin').show();
         appendImage();
         appendImage();
         info.addScore(200);
       } else {
         info.addScore(10);
+        // audio3.play();
       }
 
 
